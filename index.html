@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chakana Technologies | Ingeniería de Software a Medida</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for minimal icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- JavaScript & Config -->
+    <script src="js/main.js"></script>
+</head>
+<body class="bg-canvasLight text-graphite antialiased selection:bg-brandBlue selection:text-white">
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-200/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- SVG Chakana Modular representation -->
+                <div class="w-9 h-9 bg-brandBlue rounded-lg flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M12 2v20M2 12h20M7 7l10 10M17 7L7 17" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold tracking-tight text-brandBlue text-base leading-tight">CHAKANA</span>
+                    <span class="text-[10px] tracking-widest text-slate-500 uppercase font-semibold">Technologies</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#soluciones" class="hover:text-brandBlue transition-colors">Soluciones</a>
+                <a href="#desarrollo" class="hover:text-brandBlue transition-colors">Desarrollo a Medida</a>
+                <a href="#producto" class="hover:text-brandBlue transition-colors">Factor Escala Top</a>
+                <a href="#contacto" class="hover:text-brandBlue transition-colors">Contacto</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#contacto" class="bg-brandBlue hover:bg-opacity-90 text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-sm transition-all hover:shadow-md">
+                    Iniciar Proyecto
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="md:hidden text-slate-700 text-xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Modal/Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-xl px-6 py-6 flex flex-col gap-4">
+            <a href="#soluciones" class="mobile-link text-slate-700 font-medium py-2">Soluciones</a>
+            <a href="#desarrollo" class="mobile-link text-slate-700 font-medium py-2">Desarrollo a Medida</a>
+            <a href="#producto" class="mobile-link text-slate-700 font-medium py-2">Factor Escala Top</a>
+            <a href="#contacto" class="mobile-link text-slate-700 font-medium py-2">Contacto</a>
+            <a href="#contacto" class="mobile-link bg-brandBlue text-white text-center py-3 rounded-xl font-medium shadow">Iniciar Proyecto</a>
+        </div>
+    </header>
+
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <!-- Subtle grid background pattern -->
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: linear-gradient(#0F4C81 1px, transparent 1px), linear-gradient(90deg, #0F4C81 1px, transparent 1px); background-size: 40px 40px;"></div>
+        
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-200/70 text-slate-700 text-xs font-medium mb-6">
+                <span class="w-2 h-2 rounded-full bg-brandGreen animate-pulse"></span>
+                Soluciones de Software y Geodesia Avanzada
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brandBlue mb-6 leading-[1.08]">
+                INGENIERÍA DE SOFTWARE <br class="hidden sm:inline"><span class="text-slate-800">A MEDIDA.</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto font-normal mb-10 leading-relaxed">
+                Transformamos desafíos complejos en arquitecturas digitales de alta precisión, escalables y orientadas a resultados excepcionales.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contacto" class="w-full sm:w-auto bg-brandGreen hover:bg-emerald-600 text-white font-medium px-8 py-4 rounded-full shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02]">
+                    Comenzar mi Proyecto
+                </a>
+                <a href="#producto" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-brandBlue font-medium px-8 py-4 rounded-full border border-slate-200 shadow-sm transition-all hover:border-slate-300">
+                    Ver Factor Escala Top
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="soluciones" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold tracking-widest text-brandBlue uppercase mb-3">Nuestras Capacidades</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Soluciones diseñadas con precisión milimétrica</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="apple-card bg-canvasLight p-8 rounded-3xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-brandBlue/10 text-brandBlue flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Desarrollo Web</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Plataformas web corporativas, portales y sistemas de gestión a medida con rendimiento optimizado.</p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-brandBlue">
+                        <span>Arquitectura escalable</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="apple-card bg-canvasLight p-8 rounded-3xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-brandGreen/10 text-brandGreen flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Apps Móviles</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Aplicaciones nativas e híbridas para iOS y Android enfocadas en campo, operaciones y productividad.</p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-brandGreen">
+                        <span>Alto rendimiento</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="apple-card bg-canvasLight p-8 rounded-3xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-brandBlue/10 text-brandBlue flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Sistemas Cloud</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Infraestructura en la nube robusta, segura y automatizada para garantizar alta disponibilidad.</p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-brandBlue">
+                        <span>Seguridad total</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="apple-card bg-canvasLight p-8 rounded-3xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-brandGreen/10 text-brandGreen flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-3">Integración GIS</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Sistemas geolocalizados, cartografía digital y cálculos geodésicos de máxima precisión técnica.</p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-brandGreen">
+                        <span>Precisión experta</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="producto" class="py-24 bg-gradient-to-b from-canvasLight to-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-brandBlue rounded-[2.5rem] p-8 sm:p-14 text-white relative overflow-hidden shadow-2xl">
+                <!-- Decorative background elements -->
+                <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                    <div>
+                        <span class="inline-block px-3.5 py-1 rounded-full bg-white/10 text-emerald-400 text-xs font-semibold tracking-wider uppercase mb-6">
+                            Producto Propio Destacado
+                        </span>
+                        <h3 class="text-3xl sm:text-5xl font-bold tracking-tight mb-6">Factor Escala Top</h3>
+                        <p class="text-slate-200 text-base sm:text-lg leading-relaxed mb-8">
+                            Nuestra potente aplicación de ingeniería topográfica y geodesia probada en campo. Diseñada para profesionales que exigen exactitud milimétrica en cálculos de escalas y correcciones geodésicas.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-xl text-sm">
+                                <i class="fa-solid fa-check text-brandGreen"></i>
+                                <span>Cálculos en tiempo real</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-xl text-sm">
+                                <i class="fa-solid fa-check text-brandGreen"></i>
+                                <span>Modo Offline</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 sm:p-6 rounded-3xl border border-white/10 backdrop-blur-md">
+                        <div class="bg-slate-900 rounded-2xl p-4 shadow-inner">
+                            <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <span class="text-xs text-slate-400 font-mono">FactorEscalaTop_v2.4.exe</span>
+                            </div>
+                            <div class="space-y-3 font-mono text-xs text-emerald-400">
+                                <p>> Initializing geodetic engine...</p>
+                                <p class="text-slate-300">> Calculating scale factor at coordinates (-16.5000, -68.1500)</p>
+                                <p>> Combined Factor (K) = 0.99984712</p>
+                                <p class="text-cyan-400">> Status: High Precision Validation Successful ✓</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <h2 class="text-xs font-bold tracking-widest text-brandBlue uppercase mb-3">Conversemos</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">¿Listo para hacer realidad tu proyecto?</h3>
+                <p class="text-slate-600">Completa el formulario y un especialista técnico se pondrá en contacto contigo.</p>
+            </div>
+
+            <form id="contact-form" class="bg-canvasLight p-8 sm:p-12 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Nombre completo</label>
+                        <input type="text" id="name" required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 focus:outline-none focus:border-brandBlue transition-colors text-sm" placeholder="Ej. Carlos Mendoza">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Correo electrónico</label>
+                        <input type="email" id="email" required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 focus:outline-none focus:border-brandBlue transition-colors text-sm" placeholder="carlos@empresa.com">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Tipo de Solución</label>
+                    <select id="service" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 focus:outline-none focus:border-brandBlue transition-colors text-sm">
+                        <option>Desarrollo de Software a Medida</option>
+                        <option>Aplicación Móvil (iOS / Android)</option>
+                        <option>Sistema Cloud / Arquitectura</option>
+                        <option>Integración GIS / Geodesia</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Mensaje o Requerimiento</label>
+                    <textarea id="message" rows="4" required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 focus:outline-none focus:border-brandBlue transition-colors text-sm" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brandBlue hover:bg-opacity-90 text-white font-medium py-4 rounded-xl shadow-md transition-all">
+                    Enviar Mensaje
+                </button>
+            </form>
+
+            <!-- Custom Modal Notification (No alert() used) -->
+            <div id="success-modal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl animate-fade-in">
+                    <div class="w-16 h-16 bg-emerald-100 text-brandGreen rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2">¡Mensaje Enviado!</h4>
+                    <p class="text-slate-600 text-sm mb-6">Gracias por contactarte con Chakana Technologies. Nos comunicaremos contigo a la brevedad.</p>
+                    <button id="close-modal" class="w-full bg-brandBlue text-white py-3 rounded-xl font-medium">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-brandBlue rounded-lg flex items-center justify-center text-white">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M12 2v20M2 12h20M7 7l10 10M17 7L7 17" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="font-bold text-white text-base">CHAKANA TECHNOLOGIES</span>
+            </div>
+            <p class="text-xs text-slate-500">© 2026 Chakana Technologies. Todos los derechos reservados.</p>
+            <div class="flex items-center gap-5 text-lg">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
