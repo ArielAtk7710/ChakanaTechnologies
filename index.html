@@ -15,9 +15,9 @@
     <!-- JavaScript & Config -->
     <script src="js/main.js"></script>
 </head>
-<body class="bg-canvasLight text-graphite antialiased selection:bg-brandBlue selection:text-white">
+<body class="bg-canvasLight dark:bg-darkBg text-graphite dark:text-slate-100 antialiased selection:bg-brandBlue selection:text-white transition-colors duration-300">
 
-    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-200/60 transition-all duration-300">
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-200/60 dark:border-slate-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3 group">
@@ -28,57 +28,67 @@
                     </svg>
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-bold tracking-tight text-brandBlue text-base leading-tight">CHAKANA</span>
-                    <span class="text-[10px] tracking-widest text-slate-500 uppercase font-semibold">Technologies</span>
+                    <span class="font-bold tracking-tight text-brandBlue dark:text-cyan-400 text-base leading-tight">CHAKANA</span>
+                    <span class="text-[10px] tracking-widest text-slate-500 dark:text-slate-400 uppercase font-semibold">Technologies</span>
                 </div>
             </a>
 
             <!-- Navigation Links (Desktop) -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <a href="#soluciones" class="hover:text-brandBlue transition-colors">Soluciones</a>
-                <a href="#desarrollo" class="hover:text-brandBlue transition-colors">Desarrollo a Medida</a>
-                <a href="#producto" class="hover:text-brandBlue transition-colors">Factor Escala Top</a>
-                <a href="#contacto" class="hover:text-brandBlue transition-colors">Contacto</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+                <a href="#soluciones" class="hover:text-brandBlue dark:hover:text-cyan-400 transition-colors">Soluciones</a>
+                <a href="#desarrollo" class="hover:text-brandBlue dark:hover:text-cyan-400 transition-colors">Desarrollo a Medida</a>
+                <a href="#producto" class="hover:text-brandBlue dark:hover:text-cyan-400 transition-colors">Factor Escala Top</a>
+                <a href="#contacto" class="hover:text-brandBlue dark:hover:text-cyan-400 transition-colors">Contacto</a>
             </nav>
 
-            <!-- CTA Button -->
-            <div class="hidden md:block">
+            <!-- Actions (Theme Toggle & CTA) -->
+            <div class="hidden md:flex items-center gap-4">
+                <!-- Dark / Light Mode Toggle Button -->
+                <button id="theme-toggle" type="button" aria-label="Cambiar tema claro/oscuro" class="w-10 h-10 rounded-full flex items-center justify-center border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors shadow-sm text-base">
+                    <i id="theme-icon" class="fa-solid fa-moon text-slate-600"></i>
+                </button>
+
                 <a href="#contacto" class="bg-brandBlue hover:bg-opacity-90 text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-sm transition-all hover:shadow-md">
                     Iniciar Proyecto
                 </a>
             </div>
 
-            <!-- Mobile Menu Toggle -->
-            <button id="menu-toggle" class="md:hidden text-slate-700 text-xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <!-- Mobile Controls (Toggle theme + Menu button) -->
+            <div class="flex items-center gap-2 md:hidden">
+                <button id="theme-toggle-mobile" type="button" aria-label="Cambiar tema" class="w-9 h-9 rounded-full flex items-center justify-center border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+                    <i id="theme-icon-mobile" class="fa-solid fa-moon text-sm"></i>
+                </button>
+                <button id="menu-toggle" class="text-slate-700 dark:text-slate-200 text-xl focus:outline-none p-1">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Menu Modal/Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-xl px-6 py-6 flex flex-col gap-4">
-            <a href="#soluciones" class="mobile-link text-slate-700 font-medium py-2">Soluciones</a>
-            <a href="#desarrollo" class="mobile-link text-slate-700 font-medium py-2">Desarrollo a Medida</a>
-            <a href="#producto" class="mobile-link text-slate-700 font-medium py-2">Factor Escala Top</a>
-            <a href="#contacto" class="mobile-link text-slate-700 font-medium py-2">Contacto</a>
+        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl px-6 py-6 flex flex-col gap-4">
+            <a href="#soluciones" class="mobile-link text-slate-700 dark:text-slate-200 font-medium py-2">Soluciones</a>
+            <a href="#desarrollo" class="mobile-link text-slate-700 dark:text-slate-200 font-medium py-2">Desarrollo a Medida</a>
+            <a href="#producto" class="mobile-link text-slate-700 dark:text-slate-200 font-medium py-2">Factor Escala Top</a>
+            <a href="#contacto" class="mobile-link text-slate-700 dark:text-slate-200 font-medium py-2">Contacto</a>
             <a href="#contacto" class="mobile-link bg-brandBlue text-white text-center py-3 rounded-xl font-medium shadow">Iniciar Proyecto</a>
         </div>
     </header>
 
     <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
         <!-- Subtle grid background pattern -->
-        <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: linear-gradient(#0F4C81 1px, transparent 1px), linear-gradient(90deg, #0F4C81 1px, transparent 1px); background-size: 40px 40px;"></div>
+        <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.08] pointer-events-none" style="background-image: linear-gradient(#0F4C81 1px, transparent 1px), linear-gradient(90deg, #0F4C81 1px, transparent 1px); background-size: 40px 40px;"></div>
         
         <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-200/70 text-slate-700 text-xs font-medium mb-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium mb-6">
                 <span class="w-2 h-2 rounded-full bg-brandGreen animate-pulse"></span>
                 Soluciones de Software y Geodesia Avanzada
             </div>
             
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brandBlue mb-6 leading-[1.08]">
-                INGENIERÍA DE SOFTWARE <br class="hidden sm:inline"><span class="text-slate-800">A MEDIDA.</span>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brandBlue dark:text-blue-400 mb-6 leading-[1.08]">
+                INGENIERÍA DE SOFTWARE <br class="hidden sm:inline"><span class="text-slate-800 dark:text-slate-100">A MEDIDA.</span>
             </h1>
             
-            <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto font-normal mb-10 leading-relaxed">
+            <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto font-normal mb-10 leading-relaxed">
                 Transformamos desafíos complejos en arquitecturas digitales de alta precisión, escalables y orientadas a resultados excepcionales.
             </p>
             
@@ -86,73 +96,73 @@
                 <a href="#contacto" class="w-full sm:w-auto bg-brandGreen hover:bg-emerald-600 text-white font-medium px-8 py-4 rounded-full shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02]">
                     Comenzar mi Proyecto
                 </a>
-                <a href="#producto" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-brandBlue font-medium px-8 py-4 rounded-full border border-slate-200 shadow-sm transition-all hover:border-slate-300">
+                <a href="#producto" class="w-full sm:w-auto bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-brandBlue dark:text-cyan-400 font-medium px-8 py-4 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm transition-all hover:border-slate-300">
                     Ver Factor Escala Top
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="soluciones" class="py-20 bg-white border-t border-slate-100">
+    <section id="soluciones" class="py-20 bg-white dark:bg-darkBg border-t border-slate-100 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs font-bold tracking-widest text-brandBlue uppercase mb-3">Nuestras Capacidades</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Soluciones diseñadas con precisión milimétrica</h3>
+                <h2 class="text-xs font-bold tracking-widest text-brandBlue dark:text-cyan-400 uppercase mb-3">Nuestras Capacidades</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">Soluciones diseñadas con precisión milimétrica</h3>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Card 1 -->
-                <div class="apple-card bg-canvasLight p-8 rounded-3xl border border-slate-100 flex flex-col justify-between">
+                <div class="apple-card bg-canvasLight dark:bg-darkCard p-8 rounded-3xl border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-brandBlue/10 text-brandBlue flex items-center justify-center text-xl mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-brandBlue/10 dark:bg-brandBlue/30 text-brandBlue dark:text-cyan-400 flex items-center justify-center text-xl mb-6">
                             <i class="fa-solid fa-laptop-code"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-3">Desarrollo Web</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed">Plataformas web corporativas, portales y sistemas de gestión a medida con rendimiento optimizado.</p>
+                        <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Desarrollo Web</h4>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Plataformas web corporativas, portales y sistemas de gestión a medida con rendimiento optimizado.</p>
                     </div>
-                    <div class="mt-8 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-brandBlue">
+                    <div class="mt-8 pt-4 border-t border-slate-200/60 dark:border-slate-800 flex items-center text-xs font-semibold text-brandBlue dark:text-cyan-400">
                         <span>Arquitectura escalable</span>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="apple-card bg-canvasLight p-8 rounded-3xl border border-slate-100 flex flex-col justify-between">
+                <div class="apple-card bg-canvasLight dark:bg-darkCard p-8 rounded-3xl border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-brandGreen/10 text-brandGreen flex items-center justify-center text-xl mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-brandGreen/10 dark:bg-brandGreen/30 text-brandGreen dark:text-emerald-400 flex items-center justify-center text-xl mb-6">
                             <i class="fa-solid fa-mobile-screen-button"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-3">Apps Móviles</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed">Aplicaciones nativas e híbridas para iOS y Android enfocadas en campo, operaciones y productividad.</p>
+                        <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Apps Móviles</h4>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Aplicaciones nativas e híbridas para iOS y Android enfocadas en campo, operaciones y productividad.</p>
                     </div>
-                    <div class="mt-8 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-brandGreen">
+                    <div class="mt-8 pt-4 border-t border-slate-200/60 dark:border-slate-800 flex items-center text-xs font-semibold text-brandGreen dark:text-emerald-400">
                         <span>Alto rendimiento</span>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="apple-card bg-canvasLight p-8 rounded-3xl border border-slate-100 flex flex-col justify-between">
+                <div class="apple-card bg-canvasLight dark:bg-darkCard p-8 rounded-3xl border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-brandBlue/10 text-brandBlue flex items-center justify-center text-xl mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-brandBlue/10 dark:bg-brandBlue/30 text-brandBlue dark:text-cyan-400 flex items-center justify-center text-xl mb-6">
                             <i class="fa-solid fa-cloud"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-3">Sistemas Cloud</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed">Infraestructura en la nube robusta, segura y automatizada para garantizar alta disponibilidad.</p>
+                        <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Sistemas Cloud</h4>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Infraestructura en la nube robusta, segura y automatizada para garantizar alta disponibilidad.</p>
                     </div>
-                    <div class="mt-8 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-brandBlue">
+                    <div class="mt-8 pt-4 border-t border-slate-200/60 dark:border-slate-800 flex items-center text-xs font-semibold text-brandBlue dark:text-cyan-400">
                         <span>Seguridad total</span>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="apple-card bg-canvasLight p-8 rounded-3xl border border-slate-100 flex flex-col justify-between">
+                <div class="apple-card bg-canvasLight dark:bg-darkCard p-8 rounded-3xl border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-brandGreen/10 text-brandGreen flex items-center justify-center text-xl mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-brandGreen/10 dark:bg-brandGreen/30 text-brandGreen dark:text-emerald-400 flex items-center justify-center text-xl mb-6">
                             <i class="fa-solid fa-map-location-dot"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-3">Integración GIS</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed">Sistemas geolocalizados, cartografía digital y cálculos geodésicos de máxima precisión técnica.</p>
+                        <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Integración GIS</h4>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Sistemas geolocalizados, cartografía digital y cálculos geodésicos de máxima precisión técnica.</p>
                     </div>
-                    <div class="mt-8 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-brandGreen">
+                    <div class="mt-8 pt-4 border-t border-slate-200/60 dark:border-slate-800 flex items-center text-xs font-semibold text-brandGreen dark:text-emerald-400">
                         <span>Precisión experta</span>
                     </div>
                 </div>
@@ -160,9 +170,9 @@
         </div>
     </section>
 
-    <section id="producto" class="py-24 bg-gradient-to-b from-canvasLight to-white">
+    <section id="producto" class="py-24 bg-gradient-to-b from-canvasLight to-white dark:from-darkBg dark:to-slate-900">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-brandBlue rounded-[2.5rem] p-8 sm:p-14 text-white relative overflow-hidden shadow-2xl">
+            <div class="bg-brandBlue dark:bg-slate-800/90 rounded-[2.5rem] p-8 sm:p-14 text-white relative overflow-hidden shadow-2xl border dark:border-slate-700">
                 <!-- Decorative background elements -->
                 <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
 
@@ -209,58 +219,109 @@
         </div>
     </section>
 
-    <section id="contacto" class="py-24 bg-white">
+    <section id="contacto" class="py-24 bg-white dark:bg-darkBg transition-colors">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center max-w-xl mx-auto mb-16">
-                <h2 class="text-xs font-bold tracking-widest text-brandBlue uppercase mb-3">Conversemos</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">¿Listo para hacer realidad tu proyecto?</h3>
-                <p class="text-slate-600">Completa el formulario y un especialista técnico se pondrá en contacto contigo.</p>
+                <h2 class="text-xs font-bold tracking-widest text-brandBlue dark:text-cyan-400 uppercase mb-3">Conversemos</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight mb-4">¿Listo para hacer realidad tu proyecto?</h3>
+                <p class="text-slate-600 dark:text-slate-300">Completa el formulario y un especialista técnico se pondrá en contacto contigo.</p>
             </div>
 
-            <form id="contact-form" class="bg-canvasLight p-8 sm:p-12 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+            <form id="contact-form" class="bg-canvasLight dark:bg-darkCard p-8 sm:p-12 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Nombre completo</label>
-                        <input type="text" id="name" required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 focus:outline-none focus:border-brandBlue transition-colors text-sm" placeholder="Ej. Carlos Mendoza">
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Nombre completo</label>
+                        <input type="text" id="name" required class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3.5 text-slate-900 dark:text-white focus:outline-none focus:border-brandBlue dark:focus:border-cyan-400 transition-colors text-sm" placeholder="Ej. Carlos Mendoza">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Correo electrónico</label>
-                        <input type="email" id="email" required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 focus:outline-none focus:border-brandBlue transition-colors text-sm" placeholder="carlos@empresa.com">
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Teléfono / WhatsApp</label>
+                        <div class="flex gap-2">
+                            <!-- Selector de Código de País -->
+                            <select id="country-code" class="w-36 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-2.5 py-3.5 text-slate-900 dark:text-white focus:outline-none focus:border-brandBlue dark:focus:border-cyan-400 transition-colors text-sm font-medium">
+                                <option value="+591" selected>🇧🇴 +591</option>
+                                <option value="+54">🇦🇷 +54</option>
+                                <option value="+56">🇨🇱 +56</option>
+                                <option value="+57">🇨🇴 +57</option>
+                                <option value="+51">🇵🇪 +51</option>
+                                <option value="+52">🇲🇽 +52</option>
+                                <option value="+55">🇧🇷 +55</option>
+                                <option value="+593">🇪🇨 +593</option>
+                                <option value="+595">🇵🇾 +595</option>
+                                <option value="+598">🇺🇾 +598</option>
+                                <option value="+1">🇺🇸 +1</option>
+                                <option value="+34">🇪🇸 +34</option>
+                                <option value="+58">🇻🇪 +58</option>
+                            </select>
+                            <!-- Input para número de celular -->
+                            <input type="tel" id="phone" required pattern="[0-9]{7,12}" maxlength="12" class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3.5 text-slate-900 dark:text-white focus:outline-none focus:border-brandBlue dark:focus:border-cyan-400 transition-colors text-sm" placeholder="ingrese su numero de celular">
+                        </div>
+                        <span id="phone-validation-msg" class="text-xs text-red-500 mt-1 hidden block">Ingresa un número de celular válido.</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Correo electrónico</label>
+                        <input type="email" id="email" required class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3.5 text-slate-900 dark:text-white focus:outline-none focus:border-brandBlue dark:focus:border-cyan-400 transition-colors text-sm" placeholder="carlos@empresa.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Tipo de Solución</label>
+                        <select id="service" class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3.5 text-slate-900 dark:text-white focus:outline-none focus:border-brandBlue dark:focus:border-cyan-400 transition-colors text-sm">
+                            <option>Desarrollo de Software a Medida</option>
+                            <option>Aplicación Móvil (iOS / Android)</option>
+                            <option>Sistema Cloud / Arquitectura</option>
+                            <option>Integración GIS / Geodesia</option>
+                        </select>
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Tipo de Solución</label>
-                    <select id="service" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 focus:outline-none focus:border-brandBlue transition-colors text-sm">
-                        <option>Desarrollo de Software a Medida</option>
-                        <option>Aplicación Móvil (iOS / Android)</option>
-                        <option>Sistema Cloud / Arquitectura</option>
-                        <option>Integración GIS / Geodesia</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">Mensaje o Requerimiento</label>
-                    <textarea id="message" rows="4" required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 focus:outline-none focus:border-brandBlue transition-colors text-sm" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Mensaje o Requerimiento de Cotizacion de Proyecto</label>
+                    <textarea id="message" rows="4" required class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3.5 text-slate-900 dark:text-white focus:outline-none focus:border-brandBlue dark:focus:border-cyan-400 transition-colors text-sm" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
                 </div>
                 <button type="submit" class="w-full bg-brandBlue hover:bg-opacity-90 text-white font-medium py-4 rounded-xl shadow-md transition-all">
                     Enviar Mensaje
                 </button>
+
+                <!-- Divisor o contacto directo -->
+                <div class="relative flex py-2 items-center">
+                    <div class="flex-grow border-t border-slate-200 dark:border-slate-700"></div>
+                    <span class="flex-shrink mx-4 text-xs font-semibold uppercase text-slate-400 dark:text-slate-500">o contáctanos directamente</span>
+                    <div class="flex-grow border-t border-slate-200 dark:border-slate-700"></div>
+                </div>
+
+                <!-- Botón de WhatsApp -->
+                <a href="https://wa.me/59169856525?text=Hola%20Chakana%20Technologies,%20quisiera%20consultar%20sobre%20un%20proyecto" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="w-full flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-4 rounded-xl shadow-md shadow-emerald-500/20 transition-all hover:scale-[1.01]">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Cotizar Proyecto por WhatsApp</span>
+                </a>
             </form>
 
             <!-- Custom Modal Notification (No alert() used) -->
             <div id="success-modal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-                <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl animate-fade-in">
-                    <div class="w-16 h-16 bg-emerald-100 text-brandGreen rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 max-w-md w-full text-center shadow-2xl animate-fade-in border dark:border-slate-700">
+                    <div class="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/40 text-brandGreen rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
                         <i class="fa-solid fa-check"></i>
                     </div>
-                    <h4 class="text-2xl font-bold text-slate-900 mb-2">¡Mensaje Enviado!</h4>
-                    <p class="text-slate-600 text-sm mb-6">Gracias por contactarte con Chakana Technologies. Nos comunicaremos contigo a la brevedad.</p>
+                    <h4 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">¡Mensaje Enviado!</h4>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm mb-6">Gracias por contactarte con Chakana Technologies. Nos comunicaremos contigo a la brevedad.</p>
                     <button id="close-modal" class="w-full bg-brandBlue text-white py-3 rounded-xl font-medium">Entendido</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/59169856525?text=Hola%20Chakana%20Technologies,%20quisiera%20más%20información" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20bd5a] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-xl hover:scale-110 transition-transform duration-300"
+       title="Escríbenos por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer class="bg-slate-900 dark:bg-black text-slate-400 py-16 border-t border-slate-800 dark:border-slate-900">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 bg-brandBlue rounded-lg flex items-center justify-center text-white">
@@ -272,6 +333,7 @@
             </div>
             <p class="text-xs text-slate-500">© 2026 Chakana Technologies. Todos los derechos reservados.</p>
             <div class="flex items-center gap-5 text-lg">
+                <a href="https://wa.me/59169856525" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
                 <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
