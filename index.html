@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,8 +75,10 @@
     </header>
 
     <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <!-- Particles.js background -->
+        <div id="particles-js" class="absolute inset-0 z-0 pointer-events-none"></div>
         <!-- Subtle grid background pattern -->
-        <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.08] pointer-events-none" style="background-image: linear-gradient(#0F4C81 1px, transparent 1px), linear-gradient(90deg, #0F4C81 1px, transparent 1px); background-size: 40px 40px;"></div>
+        <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.08] pointer-events-none z-0" style="background-image: linear-gradient(#0F4C81 1px, transparent 1px), linear-gradient(90deg, #0F4C81 1px, transparent 1px); background-size: 40px 40px;"></div>
         
         <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium mb-6">
@@ -340,5 +342,10 @@
             </div>
         </div>
     </footer>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Particles.js Config -->
+    <script src="js/particles-config.js"></script>
 </body>
 </html>

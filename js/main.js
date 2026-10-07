@@ -22,11 +22,11 @@ tailwind.config = {
 // Apply theme before render to avoid flash
 (function() {
     const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        document.documentElement.classList.add('dark');
-    } else {
+    // Default: dark mode unless user explicitly chose light
+    if (savedTheme === 'light') {
         document.documentElement.classList.remove('dark');
+    } else {
+        document.documentElement.classList.add('dark');
     }
 })();
 
