@@ -1,0 +1,1 @@
+Sistema ERP educativo con diferentes modulos adaptables a las unidades educativas y colegios del Sistema educativo de bolivia.

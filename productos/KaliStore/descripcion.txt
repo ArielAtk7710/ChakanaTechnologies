@@ -1,0 +1,1 @@
+app de punto de venta POS para diferentes areas de venta, tiendas de abarrotes, tiendas de ropa, ferreterias, etc
